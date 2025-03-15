@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Toll System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container" id="loginForm">
+            <h2>Smart Toll System</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+        <!-- Main Page -->
+        <div class="main-container hidden" id="mainPage">
+            <h2>Vehicle E-Wallet</h2>
+            <div class="search-container">
+                <input type="text" id="vehicleNumber" placeholder="Enter Vehicle Number">
+                <button onclick="searchVehicle()" class="btn">Search</button>
+            </div>
+            <div class="wallet-info hidden" id="walletInfo">
+                <h3>Wallet Balance</h3>
+                <div class="balance" id="balance">RM 0</div>
+                <div class="topup-container">
+                    <input type="number" id="topupAmount" placeholder="Enter amount">
+                    <button onclick="topupWallet()" class="btn">Top Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase Scripts -->
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html> 
